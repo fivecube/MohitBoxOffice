@@ -87,14 +87,13 @@ async def get_event_status_endpoint(event_id: str, db: Session = Depends(get_db)
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome to Mohit's Box Office API (SQLite)",
+        "message": "Welcome to Mohit's Box Office. Please go to docs by /docs",
         "endpoints": {
             "create_event": "POST /events",
             "create_hold": "POST /holds", 
             "confirm_booking": "POST /book",
             "get_status": "GET /events/{event_id}"
-        },
-        "docs": "/docs",
+        }
     }
 
 @app.get("/health")
